@@ -31,7 +31,7 @@ from baka.database import chatbot_collection
 from baka.utils import stylize_text  # Import back for output only
 
 # --- 🎨 BAKA PERSONALITY CONFIG ---
-BAKA_NAME = "Baka"
+BAKA_NAME = "Pushpa"
 
 # Rotating emoji pools (fresh every response)
 EMOJI_POOL = ["✨", "💖", "🌸", "😊", "🥰", "💕", "🎀", "🌺", "💫", "🦋", "🌼", "💗", "🎨", "🍓", "☺️", "😌", "🌟", "💝"]
@@ -293,7 +293,7 @@ async def chatbot_menu(update: Update, context: ContextTypes.DEFAULT_TYPE):
         ])
         
         return await update.message.reply_text(
-            f"🤖 <b>Baka AI Settings</b>\n\n"
+            f"🤖 <b>Pushpa AI Settings</b>\n\n"
             f"📍 <b>Current Model:</b> {curr_model.title()}\n"
             f"💡 <b>Tip:</b> Codestral auto-activates for code requests!",
             parse_mode=ParseMode.HTML,
@@ -330,7 +330,7 @@ async def chatbot_menu(update: Update, context: ContextTypes.DEFAULT_TYPE):
     ])
     
     await update.message.reply_text(
-        f"🤖 <b>Baka AI Settings</b>\n\n"
+        f"🤖 <b>Pushpa AI Settings</b>\n\n"
         f"📊 <b>Status:</b> {status_emoji} {status_text}\n"
         f"🧠 <b>Model:</b> {curr_model.title()}\n"
         f"💡 <b>Tip:</b> Codestral auto-activates for code!",
@@ -364,7 +364,7 @@ async def chatbot_callback(update: Update, context: ContextTypes.DEFAULT_TYPE):
         )
         await query.answer("✅ Baka is now active!", show_alert=True)
         await query.message.edit_text(
-            "✅ <b>Baka AI Enabled!</b>\n\nShe'll respond to:\n• Replies to her messages\n• @mentions\n• Messages starting with 'hey', 'hi', 'baka'",
+            "✅ <b>Pushpa AI Enabled!</b>\n\nShe'll respond to:\n• Replies to her messages\n• @mentions\n• Messages starting with 'hey', 'hi', 'pushpa'",
             parse_mode=ParseMode.HTML
         )
 
@@ -502,7 +502,7 @@ async def ai_message_handler(update: Update, context: ContextTypes.DEFAULT_TYPE)
             text = text.replace(f"@{bot_username}", "").strip()
         
         # 3. Greeting keywords
-        elif any(text.lower().startswith(kw) for kw in ["hey", "hi", "hello", "sun", "oye", "baka", "ai"]):
+        elif any(text.lower().startswith(kw) for kw in ["hey", "hi", "hello", "sun", "oye", "pushpa", "ai"]):
             should_reply = True
 
     # --- GENERATE RESPONSE ---
