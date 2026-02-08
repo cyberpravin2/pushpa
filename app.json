@@ -1,0 +1,32 @@
+{
+  "name": "RyanBaka Bot",
+  "description": "The Ultimate Aesthetic Telegram Economy & Game Bot.",
+  "logo": "https://telegra.ph/file/5e5480760e412bd402e88.jpg",
+  "keywords": [
+    "telegram", "bot", "python", "economy", "game", "ai"
+  ],
+  "repository": "https://github.com/YourUsername/RyanBakaBot",
+  "env": {
+    "BOT_TOKEN": { "description": "Telegram Bot Token", "required": true },
+    "MONGO_URI": { "description": "MongoDB Connection String", "required": true },
+    "OWNER_ID": { "description": "Your User ID", "required": true },
+    "MISTRAL_API_KEY": { "description": "Mistral AI Key", "required": false },
+    "LOGGER_ID": { "description": "Log Channel ID", "required": false },
+    "START_IMG_URL": { "description": "Start Image URL", "required": false },
+    "SUPPORT_GROUP": { "description": "Support Link", "required": false },
+    "SUPPORT_CHANNEL": { "description": "Updates Link", "required": false },
+    "OWNER_LINK": { "description": "Owner Link", "required": false },
+    "UPSTREAM_REPO": { "description": "Git Repo URL", "required": false },
+    "GIT_TOKEN": { "description": "Git Token", "required": false },
+    "GIT_PYTHON_REFRESH": { "value": "quiet", "required": true }
+  },
+  "buildpacks": [
+    {
+      "url": "https://github.com/heroku/heroku-buildpack-apt"
+    },
+    {
+      "url": "heroku/python"
+    }
+  ],
+  "stack": "container"
+}
