@@ -35,7 +35,7 @@ from baka.utils import ensure_user_exists, get_mention
 MODEL = "flux-anime"
 
 async def draw_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
-    """Generates AI Images using Flux."""
+    """Generates AI Images using pushpa."""
     user = ensure_user_exists(update.effective_user)
     
     if not context.args:
