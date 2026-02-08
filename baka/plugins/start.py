@@ -26,7 +26,7 @@ from telegram.constants import ParseMode, ChatType
 from baka.config import BOT_NAME, START_IMG_URL, HELP_IMG_URL, SUPPORT_GROUP, SUPPORT_CHANNEL, OWNER_LINK
 from baka.utils import ensure_user_exists, get_mention, track_group, log_to_channel, SUDO_USERS, stylize_text
 
-SUDO_IMG = "https://files.catbox.moe/gyi5iu.jpg"
+SUDO_IMG = "https://freeimage.host/i/fpoGcWQ"
 
 # --- 🌸 AESTHETIC KEYBOARDS ---
 def get_start_keyboard(bot_username):
