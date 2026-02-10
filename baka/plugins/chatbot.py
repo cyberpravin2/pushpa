@@ -31,7 +31,7 @@ from baka.database import chatbot_collection
 from baka.utils import stylize_text  # Import back for output only
 
 # --- 🎨 BAKA PERSONALITY CONFIG ---
-BAKA_NAME = "Baka"
+BAKA_NAME = "Pushpa"
 
 # Rotating emoji pools (fresh every response)
 EMOJI_POOL = ["✨", "💖", "🌸", "😊", "🥰", "💕", "🎀", "🌺", "💫", "🦋", "🌼", "💗", "🎨", "🍓", "☺️", "😌", "🌟", "💝"]
@@ -169,7 +169,7 @@ async def get_ai_response(chat_id: int, user_input: str, user_name: str, selecte
         is_short_msg = len(user_input.split()) <= 3
         max_tokens = 100 if is_short_msg else 200
         
-        # 💕 Baka Persona (Natural Indian Girlfriend)
+        # 💕 Pushpa Persona (Natural Indian Girlfriend)
         emoji_set = random.sample(EMOJI_POOL, 2)  # Just 2 emojis
         system_prompt = (
             f"You are {BAKA_NAME}, a sweet Indian girlfriend who speaks natural Hinglish.\n\n"
@@ -377,9 +377,9 @@ async def chatbot_callback(update: Update, context: ContextTypes.DEFAULT_TYPE):
             {"$set": {"enabled": False}},
             upsert=True
         )
-        await query.answer("❌ Baka is now silent!", show_alert=True)
+        await query.answer("❌ Pushpa is now silent!", show_alert=True)
         await query.message.edit_text(
-            "🔇 <b>Baka AI Disabled</b>\n\nUse /chatbot to re-enable anytime.",
+            "🔇 <b>Pushpa AI Disabled</b>\n\nUse /chatbot to re-enable anytime.",
             parse_mode=ParseMode.HTML
         )
 
@@ -502,7 +502,7 @@ async def ai_message_handler(update: Update, context: ContextTypes.DEFAULT_TYPE)
             text = text.replace(f"@{bot_username}", "").strip()
         
         # 3. Greeting keywords
-        elif any(text.lower().startswith(kw) for kw in ["hey", "hi", "hello", "sun", "oye", "baka", "ai"]):
+        elif any(text.lower().startswith(kw) for kw in ["hey", "hi", "hello", "sun", "oye", "pushpa", "ai"]):
             should_reply = True
 
     # --- GENERATE RESPONSE ---
